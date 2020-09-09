@@ -1,0 +1,89 @@
+body{
+    background-color: #25274d;
+}
+.contact{
+    padding: 4%;
+    height: 400px;
+}
+.col-md-3{
+    background: RoyalBlue;
+    padding: 4%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.contact-info{
+    margin-top:10%;
+}
+.contact-info img{
+    margin-bottom: 15%;
+}
+.contact-info h2{
+    margin-bottom: 10%;
+}
+.col-md-9{
+    background: white;
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+    font-weight:600;
+}
+.contact-form button{
+    background: #25274d;
+    color: #fff;
+    font-weight: 600;
+    width: 25%;
+}
+.contact-form button:focus{
+    box-shadow:none;
+}
+#insurance_hospital_name {
+    display: none;
+}
+#occ_other {
+    display: none;
+}
+#living_other {
+    display: none;
+}
+#problem_other {
+    display: none;
+}
+#sipac_smoking {
+    display: none;
+}
+#sipac_cad { 
+    display: none;
+}
+#sipac_ckd { 
+    display: none;
+}
+#sipac_cta_yes { 
+    display: none;
+}
+#cta_rq_yes { 
+    display: none;
+}
+#refer_uc_name { 
+    display: none;
+}
+#admit_other_name { 
+    display: none;
+}
+#followup_other { 
+    display: none;
+}
+#ma_knee { 
+    display: none;
+}
+#ma_reintervention { 
+    display: none;
+}
+#ma_cardiac { 
+    display: none;
+}
+#ma_death { 
+    display: none;
+}
+

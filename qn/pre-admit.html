@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<link rel="stylesheet" href="../css/form.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/pre-op.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script> 
+<script type="text/javascript" src="../js/registeration.js"></script>
+
+
+<!------ Include the above in your HEAD tag ---------->
+<head>
+
+    <title>Health Literacy - NSMU</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/aos.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="../css/tooplate-gymso-style.css">
+</head>
+<body onload='date();'>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="../index.html">Health Literacy</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <a href="../dashbroad.html" class="nav-link smoothScroll">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../login.html" class="nav-link smoothScroll">login</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container contact">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-info">
+                    <i class="fa fa-address-book fa-2x" aria-hidden="true"></i>
+                    <h3>Pre-Admission Phase</h3>
+                    <h5>(Nurse manager)</h5>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <h5 id = date_reg></h5>
+
+                        <label class="control-label col-sm-10">Pre-Op complication in OR waiting time:</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="pre-op_com">
+                                    <option value="">Choose Option</option>
+                                    <option value="no">No</option>
+                                    <option value="yes">Yes</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="col-sm-10" id = 'pre-op_com-yes'> 
+                                    <label class="col-sm-5"><input type="checkbox" value=""> Infection</label>
+                                    <label class="col-sm-5"><input type="checkbox" value=""> Cardiac event</label>
+                                    <label class="col-sm-5"><input type="checkbox" value=""> Dead</label>
+                                    <label class="col-sm-5"><input type="checkbox" value=""> Sepsis</label>
+                                    <label class="col-sm-5"><input type="checkbox" value=""> Dead</label>
+                                    <label class="col-sm-5"><input type="checkbox" value=""> Other</label><br>
+                                    <label class="col-sm-5"><input type="text" class="form-control" id="com_date" placeholder="Date Of Complication"></label>
+                            </div>
+                        
+                        <label class="control-label col-sm-10">If Admit, the management was</label>
+                            <div class="col-sm-10" id = 'pre-op_admit'> 
+                                    <label><input type="checkbox" value=""> Debridement</label>
+                                    <label><input type="text" class="form-control" id="debridement_date" placeholder="Date"></label>
+                            </div>
+                        <label class="control-label col-sm-10">Amputation</label>
+                                <div class="col-sm-10" id = 'pre-op_admit'> 
+                                    <label><input type="checkbox" value=""> Minor</label>
+                                    <label><input type="checkbox" value=""> Major</label>
+                                    <label><input type="text" class="form-control" id="amputation_date" placeholder="Date"></label>
+                                </div>
+                                <div class="checkbox col-sm-10">
+                                    <label><input type="checkbox" value=""> Antibiotic</label>
+                                    <label><input type="text" class="form-control" id="antibiotic_date" placeholder="Date"></label>
+                                </div>
+                                <div class="col-sm-10">        
+                                    <input type="text" class="form-control" id="fname" placeholder="Other management">
+                                </div>
+                            </div>
+                        
+                        <label class="control-label col-sm-10">OR Postpone due to</label>
+                            <div class="checkbox col-sm-10">
+                                <label class="col-sm-5"><input type="checkbox">No</label>
+                                <label class="col-sm-5"><input type="checkbox">Patient</label>
+                                <label class="col-sm-5"><input type="checkbox">Emergency case</label>
+                                <label class="col-sm-5"><input type="checkbox">Changing Management</label>
+                                <label class="col-sm-5"><input type="checkbox">Over Schedule</label>
+                                <label class="col-sm-5"><input type="checkbox">Other</label>
+                            </div>
+                        
+                            <label class="control-label col-sm-2" for="note#1">Note:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="5" id="note#1"></textarea>
+                            </div>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            

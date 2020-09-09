@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../css/form.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/registeration.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment"></script> 
+
+<!------ Include the above in your HEAD tag ---------->
+<head>
+
+    <title>Health Literacy - NSMU</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/aos.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="../css/tooplate-gymso-style.css">
+</head>
+<body onload='date();'>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="../index.html">Health Literacy</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <a href="../dashbroad.html" class="nav-link smoothScroll">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../login.html" class="nav-link smoothScroll">login</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container contact">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-info">
+                    <i class="fa fa-address-book fa-2x" aria-hidden="true"></i>
+                    <h3>Personal Information</h3>
+                    
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <h5 id = date_reg></h5>
+                        <label class="control-label col-sm-4">Information:</label>
+                            <div class="col-sm-10">        
+                                <input type="text" class="form-control" id="fname" placeholder="First Name">
+                                <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                                <input type="text" class="form-control" id="pid" placeholder="Last 5 digits of ID">
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" onclick="uqid();">Submit</button>
+                            </div>
+
+                        <label class="control-label col-sm-4">Patient Unique ID </label>
+                            <div class="col-sm-10">
+                                <p id="error"></p>
+                                <p id="uqid"></p>          
+                            </div> 
+
+                        <label class="control-label col-sm-4">1st Visit diagnosis:</label>
+                            <div class="col-sm-10">        
+                                <input type="text" class="form-control" id="fname" placeholder="Date of First Diagnosis">
+                            </div>
+                    
+                        <label class="control-label col-sm-4">Staff's name</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="staff_name">
+                                    <option value="">Choose Provider</option>
+                                    <option value="kiattisak">นพ.เกียรติศักดิ์ หงษ์คู</option>
+                                    <option value="kanin">นพ.คณินท์ พฤกษ์ประเสริฐ</option>
+                                    <option value="khamin">นพ.คามิน ชินศักดิ์ชัย</option>
+                                    <option value="chanean">นพ.เฉนียน เรืองเศรษฐกิจ</option>
+                                    <option value="chumpol">นพ.ชุมพล ว่องวานิช</option>
+                                    <option value="nuttawut">นพ.ณัฐวุฒิ เสริมสาธนสวัสดิ์</option>
+                                    <option value="tossapol">นพ.ทศพล ประภัสโร</option>
+                                    <option value="chumpol">นพ.ชุมพล ว่องวานิช</option>
+                                    <option value="pramook">นพ.ประมุข มุทิรางกูร</option>
+                                    <option value="suteekhanit">นพ.สุธีคณิต หัถพรสวรรค์</option>
+                                </select>
+                              </div>
+
+                        <label class="control-label col-sm-4">Nurse Case Manager</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="staff_name">
+                                    <option value="">Choose Nurse Manager</option>
+                                    <option value="napaporn">นภาพร วาณิชย์กุล</option>
+                                    <option value="rattana">รัตนา เพียรเจริญสิน</option>
+                                </select>
+                              </div>
+                        
+                        <label class="control-label col-sm-4">Health Insurance</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="insurance" onchange="insurance()">
+                                    <option value="">Choose your health insurance</option>
+                                    <option value="ss">ประกันสังคม</option>
+                                    <option value="spsc">สปสช</option>
+                                    <option value="gov">ข้าราชการ</option>
+                                    <option value="company">รัฐวิสาหกิจ</option>
+                                    <option value="selfpay">ชำระเอง</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-10" id = 'insurance_hospital_name'>        
+                                <input type="text" class="form-control" placeholder="Hospital's name">
+                            </div>
+                        <label class="control-label col-sm-4">Education</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="education">
+                                    <option value="">Choose your Education level</option>
+                                    <option value="edu_no">ไม่ได้เรียน</option>
+                                    <option value="edu_ps">ประถม</option>
+                                    <option value="edu_hs">มัธยม/ อนุปริญญา</option>
+                                    <option value="edu_bs">ปริญญาตรีหรือสูงกว่า</option>
+                                </select>
+                              </div>
+                        <label class="control-label col-sm-4">Occupation</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="occupation" onchange="occupation_other()">
+                                    <option value="">Choose your occupation</option>
+                                    <option value="occ_gov">ข้าราชการ</option>
+                                    <option value="occ_com">รัฐวิสาหกิจ</option>
+                                    <option value="occ_self">ส่วนตัว</option>
+                                    <option value="occ_labor">ลูกจ้าง</option>
+                                    <option value="occ_farm">เกษตรกรรม</option>
+                                    <option value="occ_freelance">รับจ้างอิสระ</option>
+                                    <option value="occ_nojob">ว่างงาน</option>
+                                    <option value="occ_other">อื่นๆ โปรดระบุ</option>
+                                </select>
+                              </div>
+                             
+                              <div class="col-sm-10" id = 'occ_other'>        
+                                <input type="text" class="form-control" placeholder="โปรดระบุ">
+                            </div>
+
+                        <label class="control-label col-sm-4">Living</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="living" onchange="living_other()">
+                                    <option value="">Choose your living status</option>
+                                    <option value="spouse">คู่สมรส</option>
+                                    <option value="child">บุตร</option>
+                                    <option value="counsin">ญาติ</option>
+                                    <option value="friend">เพื่อน</option>
+                                    <option value="alone">ตามลำพัง</option>
+                                    <option value="assistance">ผู้ดูแล</option>
+                                    <option value="living_other">อื่นๆ โปรดระบุ</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-10" id = 'living_other'>        
+                                <input type="text" class="form-control" placeholder="โปรดระบุ">
+                            </div>
+
+                        <label class="control-label col-sm-4">Functional Status (baseline)</label>
+                            <div class="input-group col-sm-10">
+                                <select class="custom-select" id="baseline">
+                                    <option value="">Choose your functional status</option>
+                                    <option value="bedbound">Bed Bound</option>
+                                    <option value="wheelchair">Wheelchair Bound</option>
+                                    <option value="am_assistance">Ambulation with Assistance</option>
+                                    <option value="minimal_am">Minimally Ambulation</option>
+                                    <option value="unlimited_am">Unlimited Ambulation</option>               
+                                </select>
+                              </div>
+                        <label class="control-label col-sm-4">Quality Of life (Baseline)</label>
+                            <div class="input-group col-sm-10">
+                                <label class="input-group-text col-sm-3">Movement</label>
+                                <select class="custom-select" id="qof_movement_select">
+                                  <option value="noproblem">No Problem</option>
+                                  <option value="little">little</option>
+                                  <option value="medium">Medium</option>
+                                  <option value="large">Large</option>
+                                  <option value="extreme">Extreme</option>
+                                </select>
+                            </div>
+                            <div class="input-group col-sm-10">
+                                <label class="input-group-text col-sm-3">Selfcare</label>
+                                <select class="custom-select" id="qof_selfcare_select">
+                                  <option value="noproblem">No Problem</option>
+                                  <option value="little">little</option>
+                                  <option value="medium">Medium</option>
+                                  <option value="large">Large</option>
+                                  <option value="extreme">Extreme</option>
+                                </select>
+                              </div>
+                              <div class="input-group col-sm-10">
+                                <label class="input-group-text col-sm-3">Activities</label>
+                                <select class="custom-select" id="qof_activities_select">
+                                  <option value="noproblem">No Problem</option>
+                                  <option value="little">little</option>
+                                  <option value="medium">Medium</option>
+                                  <option value="large">Large</option>
+                                  <option value="extreme">Extreme</option>
+                                </select>
+                              </div>
+                              <div class="input-group col-sm-10">
+                                <label class="input-group-text col-sm-3">Self-Comfortable</label>
+                                <select class="custom-select" id="qof_comfortable_select">
+                                  <option value="noproblem">No Problem</option>
+                                  <option value="little">little</option>
+                                  <option value="medium">Medium</option>
+                                  <option value="large">Large</option>
+                                  <option value="extreme">Extreme</option>
+                                </select>
+                              </div>
+                              <div class="input-group col-sm-10">
+                                <label class="input-group-text col-sm-3">Anxiety</label>
+                                <select class="custom-select" id="qof_anxiety_select">
+                                  <option value="noproblem">No Problem</option>
+                                  <option value="little">little</option>
+                                  <option value="medium">Medium</option>
+                                  <option value="large">Large</option>
+                                  <option value="extreme">Extreme</option>
+                                </select>
+                              </div>
+
+                        <label class="control-label col-sm-2" for="note#1">Note:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="5" id="note#1"></textarea>
+                            </div>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
