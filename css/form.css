@@ -71,7 +71,16 @@ body{
 #admit_other_name { 
     display: none;
 }
+#readmission_date{
+    display: none;
+}
 #followup_other { 
+    display: none;
+}
+#refer_uc_name{
+    display: none;
+}
+#admit_other_name{
     display: none;
 }
 #ma_knee { 

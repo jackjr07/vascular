@@ -63,4 +63,15 @@ function cardiac_event(){
         document.getElementById('ma_death').style.display ='none';
     }
 
+    
+}
+
+function cause_death(){
+    // let cause_death_val = document.querySelector('#ma_death')
+    // let cause_death_selected = cause_death_val.options[cause_death_val.selectedIndex].value; 
+    // console.log(cause_death_selected);
+    let death_val = document.querySelector('#ma_death');
+    let death_selected = death_val.options[death_val.selectedIndex].value;
+
+    console.log(death_selected);
 }
