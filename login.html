@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="css/login.css">
 
 </head>
-<body>
+<body onload="get_user()">
     <div class="wrapper fadeInDown">
         <div id="formContent">
           <!-- Tabs Titles -->
@@ -18,12 +18,13 @@
           <!-- Icon -->
           <div class="fadeIn first">
             <img src="images/login-logo.svg" id="icon"/>
+            <h3>Member Login</h3>
           </div>
       
           <!-- Login Form -->
           <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="text" id="username" class="fadeIn second" placeholder="username">
+            <input type="text" id="password" class="fadeIn third" placeholder="password">
           </form>
       
           <!-- Remind Passowrd -->
